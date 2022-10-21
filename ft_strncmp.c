@@ -6,18 +6,20 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:20:58 by ebennamr          #+#    #+#             */
-/*   Updated: 2022/10/17 13:57:31 by ebennamr         ###   ########.fr       */
+/*   Updated: 2022/10/21 15:25:58 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(char *s1, char *s2, size_t n)
+int	ft_strncmp(char *s1, const char *s2, size_t n)
 {
 	unsigned char	*pt1;
 	unsigned char	*pt2;
 	size_t			i;
 
+	if (n == 0)
+		return (0);
 	pt1 = (unsigned char *)s1;
 	pt2 = (unsigned char *)s2;
 	i = 0;

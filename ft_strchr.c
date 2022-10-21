@@ -6,15 +6,19 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 09:40:51 by ebennamr          #+#    #+#             */
-/*   Updated: 2022/10/19 14:04:31 by ebennamr         ###   ########.fr       */
+/*   Updated: 2022/10/21 11:33:18 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int x)
 {
-	while (*s != '\0' && x != *s)
+	while (*s)
+	{
+		if (*s == (char)x)
+			return ((char *)s);
 		s++;
-	if ((char)x == *s)
+	}
+	if (x == '\0')
 		return ((char *)s);
 	return (0);
 }

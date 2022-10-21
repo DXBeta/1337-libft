@@ -6,12 +6,11 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 12:57:15 by ebennamr          #+#    #+#             */
-/*   Updated: 2022/10/18 20:05:18 by ebennamr         ###   ########.fr       */
+/*   Updated: 2022/10/21 16:19:30 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

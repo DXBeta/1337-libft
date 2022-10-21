@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebennamr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:32:57 by ebennamr          #+#    #+#             */
-/*   Updated: 2022/10/11 11:32:59 by ebennamr         ###   ########.fr       */
+/*   Updated: 2022/10/21 11:03:49 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+#include "libft.h"
+
+int	ft_atoi(const char *str)
 {
 	int		i;
 	int		mult;

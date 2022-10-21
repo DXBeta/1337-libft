@@ -6,13 +6,13 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 10:20:09 by ebennamr          #+#    #+#             */
-/*   Updated: 2022/10/19 21:30:09 by ebennamr         ###   ########.fr       */
+/*   Updated: 2022/10/21 20:57:50 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_exist(const char *pt, char c)
+static int	is_exist(const char *pt, char c)
 {
 	int	count;
 
@@ -26,7 +26,7 @@ int	is_exist(const char *pt, char c)
 	return (0);
 }
 
-int	get_end(const char *s1, const char *set)
+static int	get_end(const char *s1, const char *set)
 {
 	int	len;
 
@@ -39,7 +39,7 @@ int	get_end(const char *s1, const char *set)
 	return (0);
 }
 
-int	get_start(const char *s1, const char *set)
+static int	get_start(const char *s1, const char *set)
 {
 	int	count;
 

@@ -6,11 +6,11 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 15:36:00 by ebennamr          #+#    #+#             */
-/*   Updated: 2022/10/13 21:31:54 by ebennamr         ###   ########.fr       */
+/*   Updated: 2022/10/21 11:00:03 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int x, size_t n)
 {
@@ -25,5 +25,5 @@ void	*ft_memchr(const void *s, int x, size_t n)
 			return (pt + i);
 		i++;
 	}
-	return (NULL);
+	return (0);
 }

@@ -6,30 +6,26 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 10:53:08 by ebennamr          #+#    #+#             */
-/*   Updated: 2022/10/18 20:01:20 by ebennamr         ###   ########.fr       */
+/*   Updated: 2022/10/21 14:28:31 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-char	*ft_strnstr(char *str, char *to_find, size_t len)
+char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
-	size_t	i;
-	size_t	j;
+	size_t	len_s2;
 
-	i = 0;
-	if (*to_find == '\0' || !len)
-		return (str);
-	while (str[i] != '\0')
+	len_s2 = ft_strlen(s2);
+	if (!*s2)
+		return ((char *)s1);
+	if (!len)
+		return (0);
+	while (*s1 && len-- >= len_s2)
 	{
-		j = 0;
-		while (str[i + j] == to_find[j] && (j + i) < len)
-		{
-			if (to_find[j + 1] == '\0')
-				return (&str[i]);
-			j++;
-		}
-		i++;
+		if (*s1 == *s2 && ft_memcmp(s1, s2, len_s2) == 0)
+			return ((char *)s1);
+		s1++;
 	}
-	return (0);
+	return (NULL);
 }

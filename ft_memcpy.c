@@ -6,7 +6,7 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:53:40 by ebennamr          #+#    #+#             */
-/*   Updated: 2022/10/13 19:03:26 by ebennamr         ###   ########.fr       */
+/*   Updated: 2022/10/21 21:12:31 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	size_t	i;
 
 	if (!dst && !src)
-		return (NULL);
+		return (0);
 	i = 0;
 	while (i < n)
 	{

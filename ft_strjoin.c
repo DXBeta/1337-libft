@@ -6,7 +6,7 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 18:41:07 by ebennamr          #+#    #+#             */
-/*   Updated: 2022/10/18 19:05:37 by ebennamr         ###   ########.fr       */
+/*   Updated: 2022/10/21 20:45:13 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strjoin(char const *string1, char const *string2)
 	len = ft_strlen(string1) + ft_strlen(string2);
 	count = 0;
 	pt = malloc(len + 1);
-	if (!pt || !string1 || !string2)
+	if (!pt)
 		return (0);
 	while (string1[count])
 	{

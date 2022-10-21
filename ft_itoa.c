@@ -6,14 +6,13 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 10:26:07 by ebennamr          #+#    #+#             */
-/*   Updated: 2022/10/18 19:03:04 by ebennamr         ###   ########.fr       */
+/*   Updated: 2022/10/21 10:41:52 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-int	getnumlen(int n)
+static int	getnumlen(int n)
 {
 	int	len;
 
