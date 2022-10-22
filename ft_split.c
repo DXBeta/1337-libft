@@ -6,16 +6,30 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:44:33 by ebennamr          #+#    #+#             */
-/*   Updated: 2022/10/20 21:14:07 by ebennamr         ###   ########.fr       */
+/*   Updated: 2022/10/22 18:01:57 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_words(char const *string, char c)
+static char	**free_all(char **list)
 {
-	int	count;
-	int	i;
+	size_t	j;
+
+	j = 0;
+	while (list[j])
+	{
+		free(list[j]);
+		j++;
+	}
+	free(list);
+	return (NULL);
+}
+
+static size_t	count_words(char const *string, char c)
+{
+	size_t	count;
+	int		i;
 
 	count = 0;
 	i = 0;
@@ -32,45 +46,29 @@ static int	count_words(char const *string, char c)
 	return (count);
 }
 
-static char	*word_dup(const char *str, int start, int finish)
-{
-	char	*word;
-	int		i;
-
-	i = 0;
-	word = malloc((finish - start + 1) * sizeof(char));
-	if (!word)
-		return (0);
-	while (start < finish)
-		word[i++] = str[start++];
-	word[i] = '\0';
-	return (word);
-}
-
 char	**ft_split(char const *s, char c)
 {
-	size_t	i;
-	size_t	j;
-	int		index;
 	char	**split;
+	size_t	i;
+	size_t	count;
+	size_t	save;
 
-	split = malloc((count_words(s, c) + 1) * sizeof(char *));
-	if (!s || !split)
-		return (0);
 	i = 0;
-	j = 0;
-	index = -1;
-	while (i <= ft_strlen(s))
+	count = 0;
+	split = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!split)
+		return (NULL);
+	while (i < count_words(s, c) && s[count] != '\0')
 	{
-		if (s[i] != c && index < 0)
-			index = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
-		{
-			split[j++] = word_dup(s, index, i);
-			index = -1;
-		}
-		i++;
+		while (s[count] == c)
+			count++;
+		save = count;
+		while (s[count] != c && s[count] != '\0')
+			count++;
+		split[i] = ft_substr(&s[save], 0, count - save);
+		if (split[i++] == 0)
+			return (free_all(split));
 	}
-	split[j] = 0;
+	split[i] = NULL;
 	return (split);
 }
