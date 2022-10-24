@@ -6,7 +6,7 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:44:33 by ebennamr          #+#    #+#             */
-/*   Updated: 2022/10/22 18:01:57 by ebennamr         ###   ########.fr       */
+/*   Updated: 2022/10/23 12:46:57 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	count = 0;
+	if (!s)
+		return (NULL);
 	split = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!split)
 		return (NULL);

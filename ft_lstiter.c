@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.C                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 13:42:41 by ebennamr          #+#    #+#             */
-/*   Updated: 2022/10/23 13:56:10 by ebennamr         ###   ########.fr       */
+/*   Created: 2022/10/24 13:02:27 by ebennamr          #+#    #+#             */
+/*   Updated: 2022/10/24 13:03:50 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *str, int x, size_t n)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	size_t				i;
+	t_list	*temp;
 
-	i = 0;
-	while (i < n)
+	temp = lst;
+	while (temp)
 	{
-		*(unsigned char *)(str + i) = (unsigned char) x;
-		i++;
+		(*f)(temp->content);
+		temp = temp->next;
 	}
-	return (str);
 }

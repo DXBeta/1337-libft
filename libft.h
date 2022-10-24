@@ -6,7 +6,7 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 18:15:36 by ebennamr          #+#    #+#             */
-/*   Updated: 2022/10/21 21:34:01 by ebennamr         ###   ########.fr       */
+/*   Updated: 2022/10/24 13:40:59 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,15 @@ int			ft_tolower(int x);
 int			ft_isdigit(int x);
 int			ft_isalnum(int x);
 int			ft_isprint(int x);
+//bounus part
+t_list		*ft_lstlast(t_list *lst);
+t_list		*ft_lstnew(void *content);
+void		ft_lstadd_front(t_list **lst, t_list *new);
+void		ft_lstadd_back(t_list **lst, t_list *new);
+void		ft_lstclear(t_list **lst, void (*del)(void*));
+void		ft_lstiter(t_list *lst, void (*f)(void *));
+t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+int			ft_lstsize(t_list *lst);
+
+
 #endif
