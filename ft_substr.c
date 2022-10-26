@@ -6,7 +6,7 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 17:34:46 by ebennamr          #+#    #+#             */
-/*   Updated: 2022/10/21 14:35:41 by ebennamr         ###   ########.fr       */
+/*   Updated: 2022/10/26 15:57:48 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	j;
 	char	*p;
 
-	p = (char *)(malloc(len + 1));
+	if (!s)
+		return (NULL);
+	if (len <= ft_strlen(s + start))
+		p = (char *)(malloc(len + 1));
+	else
+		p = (char *)(malloc(ft_strlen(s + start) + 1));
 	j = 0;
 	if (!p || !s)
 	{

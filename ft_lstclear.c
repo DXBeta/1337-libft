@@ -6,7 +6,7 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 12:51:34 by ebennamr          #+#    #+#             */
-/*   Updated: 2022/10/24 13:00:00 by ebennamr         ###   ########.fr       */
+/*   Updated: 2022/10/26 12:11:12 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 		while (*lst)
 		{
 			temp = (*lst)->next;
-			(*del)((*lst)->content);
+			del((*lst)->content);
 			free(*lst);
 			*lst = temp;
 		}
