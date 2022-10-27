@@ -6,7 +6,7 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:03 by ebennamr          #+#    #+#             */
-/*   Updated: 2022/10/21 20:48:39 by ebennamr         ###   ########.fr       */
+/*   Updated: 2022/10/27 10:17:42 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ char	*ft_strrchr(const char *str, int x)
 {
 	int		len;
 
-	len = ft_strlen(str) + 1;
 	if (!str)
 		return (0);
+	len = ft_strlen(str) + 1;
 	while (len--)
 	{
 		if (*(str + len) == (char)x)

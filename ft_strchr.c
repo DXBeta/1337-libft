@@ -6,12 +6,16 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 09:40:51 by ebennamr          #+#    #+#             */
-/*   Updated: 2022/10/21 11:33:18 by ebennamr         ###   ########.fr       */
+/*   Updated: 2022/10/27 10:17:02 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strchr(const char *s, int x)
 {
+	if (!s)
+		return (0);
 	while (*s)
 	{
 		if (*s == (char)x)
