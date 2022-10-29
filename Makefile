@@ -70,7 +70,7 @@ OBJS_BONUS = $(SRCS_BN:.c=.o)
 
 all : $(NAME)
 
-%.o : %.c
+%.o : %.c lift.h
 	$(CC) $(CFLAG) -c $< -o $@
 
 clean :
